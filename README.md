@@ -24,6 +24,18 @@ Install in your website folder and add the following script to the package.json 
 
 Adapt the siteConfig.js of your website to contain the following keys:
 
+### pdfBuildDir
+
+The directory in your website folder in which the PDF files will be saved. Depending on the usage, it is useful to have this option available. For example if set to ```build```, the PDF are saved next to the (previously) generated website. In this case it is easy to download the PDF files from the web based documentation.
+
+Default: ```print```
+
+### pdfBuildDirCleanUp
+
+If set to true, the directory passed in [pdfBuildDir](#pdfBuildDir) will be removed before generating the PDF files. In case the PDF files should be saved in your ```build``` directory, set this configuration key to false in order to not delete the previously generated static website.
+
+Default: ```true```
+
 ### pdfIgnoreDocs
 
 Array of doc ID's to ignore.
@@ -126,11 +138,7 @@ Example:
 
 ```/© Your Company\d{4}-\d{2}-\d{2}Page \d* \/ \d*/g```
 
-### Version
-
-The version parameter passed to ```getPdfCoverPage``` comes from the package.json file in your website folder.
-
 ## Limitation
 
-- No support for versions
+- Just documentations are generated, no pages or blog posts
 - No support for translations
