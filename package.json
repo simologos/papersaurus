@@ -10,7 +10,10 @@
     "docusaurus",
     "pdf"
   ],
-  "scripts": { },
+  "scripts": {
+    "lint": "eslint \"**/*.js\" --ignore-pattern node_modules/",
+    "lint:fix": "eslint \"**/*.js\" --ignore-pattern node_modules/ --fix"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/simologos/papersaurus.git"
@@ -35,6 +38,7 @@
     "classnames": "^2.2.6",
     "commander": "^4.0.1",
     "cssnano": "^4.1.10",
+    "easy-pdf-merge": "^0.2.2",
     "escape-string-regexp": "^2.0.0",
     "express": "^4.17.1",
     "feed": "^4.0.0",
@@ -46,9 +50,11 @@
     "lodash": "^4.17.15",
     "markdown-toc": "^1.2.0",
     "mkdirp": "^0.5.1",
+    "pdf-parse": "^1.1.1",
     "portfinder": "^1.0.25",
     "postcss": "^7.0.23",
     "prismjs": "^1.17.1",
+    "puppeteer": "^3.0.4",
     "react": "^16.8.4",
     "react-dev-utils": "^9.1.0",
     "react-dom": "^16.8.4",
@@ -59,12 +65,16 @@
     "tcp-port-used": "^1.0.1",
     "tiny-lr": "^1.1.1",
     "tree-node-cli": "^1.2.5",
-    "truncate-html": "^1.0.3",
-    "puppeteer": "^3.0.4",
-    "easy-pdf-merge": "^0.2.2",
-    "pdf-parse": "^1.1.1"
+    "truncate-html": "^1.0.3"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.4",
     "filepath": "^1.1.0",
     "front-matter": "^3.0.2",
     "glob-promise": "^3.3.0",
