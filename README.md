@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=simologos_papersaurus&metric=alert_status)](https://sonarcloud.io/dashboard?id=simologos_papersaurus)
+
 ## Introduction
 
 A PDF generator for Docusaurus 1.x documentation pages, based on [Docusaurus](https://docusaurus.io/) and [Puppeteer](https://pptr.dev/).
