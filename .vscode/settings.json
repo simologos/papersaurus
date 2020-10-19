@@ -1,0 +1,12 @@
+{
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.rulers": [
+    100
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "search.exclude": {
+    "**/coverage": true
+  }
+}
