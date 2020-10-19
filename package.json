@@ -60,6 +60,7 @@
     "react-dom": "^16.8.4",
     "remarkable": "^2.0.0",
     "request": "^2.88.0",
+    "semantic-release": "^17.2.1",
     "shelljs": "^0.8.4",
     "sitemap": "^3.2.2",
     "tcp-port-used": "^1.0.1",
@@ -78,6 +79,7 @@
     "filepath": "^1.1.0",
     "front-matter": "^3.0.2",
     "glob-promise": "^3.3.0",
+    "jest": "^26.6.0",
     "rimraf": "^3.0.2"
   }
 }
