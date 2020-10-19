@@ -1,35 +1,48 @@
-# This is a basic workflow to help you get started with Actions
+# This workflow is used to validate the Master branch and trigger a release.
 
 name: Master
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
+    # Trigger the workflow on push events to the master branch
     branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# Define one job, in which all steps are executed serially.
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "master"
   master:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x] # Only run the 12.x build
+        # Only run the 12.x build
+        node-version: [12.x] 
 
     steps:
+
+    # First, checkout the repository
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
+
+    # Then, setup node, with the defined version from above
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+
+    # Install yarn globally, so we can use the yarn lockfile
     - run: npm install -g yarn   
+    # Lint the source code with ESLint.
     - name: Lint source code using eslint.
       run: |
         yarn install --frozen-lockfile
         yarn lint
+
+    # Execute unit tests using jest.
+    - name: Execute low level unit tests.
+      run: |
+        yarn jest
+
+    # Start the SonarCloud Scanner, and load the tokens from the Github Secrets
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
