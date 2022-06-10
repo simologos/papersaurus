@@ -61,7 +61,7 @@
     "react-dom": "^16.8.4",
     "remarkable": "^2.0.0",
     "request": "^2.88.0",
-    "semantic-release": "^17.2.1",
+    "semantic-release": "^19.0.3",
     "shelljs": "^0.8.4",
     "sitemap": "^3.2.2",
     "tcp-port-used": "^1.0.1",
